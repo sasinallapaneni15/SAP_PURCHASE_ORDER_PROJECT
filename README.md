@@ -16,6 +16,12 @@ Table Maintenance Generator (TMG)
 ABAP report program (Insert, Update, Delete)
 
 📂 Technical Objects Created
+| Table               | Description           |
+| ------------------- | --------------------- |
+| **ZPURCHASE_HEAD**  | Purchase Order Header |
+| **ZPURCHASE_ITEMS** | Purchase Order Item   |
+| **ZBSART_DATA**     | Document Type Table   |
+
 
 1️⃣ Tables
 
@@ -29,9 +35,22 @@ ZBSART_DATA	Document Type Table
 
 Object	Description
 
+| Object     | Description               |
+| ---------- | ------------------------- |
+| **ZBSART** | Document Type Search Help |
+
+
+
 ZBSART	Document Type Search Help
 
 3️⃣ Foreign Keys
+
+| Child Table     | Field  | Check Table    | Purpose                  |
+| --------------- | ------ | -------------- | ------------------------ |
+| ZPURCHASE_ITEMS | ZEBELN | ZPURCHASE_HEAD | Validate PO Number       |
+| ZPURCHASE_ITEMS | MATNR  | MARA           | Validate Material Number |
+| ZPURCHASE_HEAD  | ZBSART | ZBSART_DATA    | Validate Document Type   |
+
 
 Child Table	Field	Check Table	Purpose
 
